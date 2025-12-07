@@ -1,8 +1,3 @@
-/* ========================================
-   FIX DEVICE - CSS REFACTORIZADO
-   Sistema Mobile-First con breakpoints consistentes
-   ======================================== */
-
 /* ----------------------------------------
    VARIABLES Y RESET
    ---------------------------------------- */
@@ -16,7 +11,6 @@
     
     --shadow-card: 5px 30px 50px -20px rgba(251, 1, 1, 0.1);
     
-    /* Contenedores fluidos */
     --container-padding: clamp(1rem, 5vw, 3rem);
     --section-spacing: clamp(2rem, 8vw, 5rem);
 }
@@ -82,7 +76,6 @@ a {
     text-align: start;
 }
 
-/* Hamburger Button */
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -106,7 +99,6 @@ a {
     transition: all 0.3s ease;
 }
 
-/* Hamburger animation when active */
 .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 8px);
 }
@@ -119,12 +111,10 @@ a {
     transform: rotate(-45deg) translate(6px, -8px);
 }
 
-/* Overlay - DESHABILITADO */
 .nav-overlay {
     display: none;
 }
 
-/* Mobile Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -163,7 +153,6 @@ a {
     background-color: var(--color-primary);
 }
 
-/* Body lock when menu is open */
 body.nav-open {
     overflow: hidden;
 }
@@ -355,7 +344,6 @@ body.nav-open {
     color: var(--color-primary);
 }
 
-/* Línea decorativa debajo del título */
 .Services .service-underline {
     width: 80px;
     height: 3px;
@@ -517,7 +505,6 @@ body.nav-open {
     color: var(--color-primary);
 }
 
-/* Línea decorativa debajo del título */
 .Choose-your-plan .plan-underline {
     width: 80px;
     height: 3px;
@@ -552,7 +539,6 @@ body.nav-open {
     width: 100%;
 }
 
-/* MOBILE: Reorganizar con CSS Grid y order */
 .basic-premium {
     display: flex;
     flex-direction: column;
@@ -567,7 +553,6 @@ body.nav-open {
     margin-bottom: 0;
 }
 
-/* En móvil: Basic primero, Premium segundo */
 .plan-item:first-child {
     order: 1;
 }
@@ -590,7 +575,6 @@ body.nav-open {
     color: #333;
 }
 
-/* Buy Now section - reorganizado para móvil */
 .Buy-Now {
     text-align: center;
     display: flex;
@@ -642,32 +626,27 @@ body.nav-open {
         gap: 0;
     }
     
-    /* Ocultar contenedor basic-premium y Buy-Now, mostrar elementos individuales */
     .basic-premium,
     .Buy-Now {
         display: contents;
     }
     
-    /* Plan Basic - orden 1 */
     .plan-item:first-child {
         order: 1;
         margin-bottom: 1rem;
     }
     
-    /* Free label - orden 2 */
     .Buy-Now h4.free {
         order: 2;
         margin-top: 0.5rem;
         margin-bottom: 1.5rem;
     }
     
-    /* Plan Premium - orden 3 */
     .plan-item:last-child {
         order: 3;
         margin-bottom: 1rem;
     }
     
-    /* Costo y botón - orden 4 */
     .Buy-Now .costo {
         order: 4;
         margin-top: 0.5rem;
@@ -692,7 +671,6 @@ body.nav-open {
     color: var(--color-primary);
 }
 
-/* Línea decorativa debajo del título */
 .title-underline {
     width: 80px;
     height: 3px;
@@ -722,7 +700,6 @@ body.nav-open {
     margin-bottom: 0.25rem;
 }
 
-/* Estrellas de rating */
 .stars {
     display: flex;
     justify-content: center;
@@ -750,7 +727,6 @@ body.nav-open {
     position: relative;
 }
 
-/* Triángulo apuntando hacia arriba */
 .comment-box-img::before {
     content: '';
     position: absolute;
@@ -873,7 +849,6 @@ textarea.controls {
     text-align: center;
 }
 
-/* Sección Social - Síguenos */
 .seccionfooter-social h3 {
     font-family: 'Poppins', sans-serif;
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
@@ -886,7 +861,6 @@ textarea.controls {
     font-weight: 700;
 }
 
-/* Sección Suscribirse */
 .seccionfooter-subscribe h3 {
     font-family: 'Poppins', sans-serif;
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
@@ -895,7 +869,6 @@ textarea.controls {
     font-style: normal;
 }
 
-/* Sección Ubicación */
 .seccionfooter-ubicacion h3 {
     font-family: 'Saira Condensed', sans-serif;
     font-size: clamp(1.2rem, 2.5vw, 1.4rem);
@@ -1152,7 +1125,6 @@ textarea.controls {
         margin-bottom: 0;
     }
     
-    /* TABLET/DESKTOP: Layout horizontal para planes */
     .container-basic-premium-buy {
         flex-direction: row;
         align-items: center;
@@ -1167,7 +1139,6 @@ textarea.controls {
         flex: 1;
     }
     
-    /* Restaurar orden normal en desktop */
     .plan-item:first-child {
         order: unset;
     }

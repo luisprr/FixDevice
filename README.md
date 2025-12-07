@@ -101,6 +101,7 @@ index.html
 - [Daniela Gómez](https://github.com/DanieGF1)
 - [Abigail Goñe](https://github.com/abigoe02)
 - [Luis Rodríguez](https://github.com/luisprr)
+- [Gustavo Román](https://github.com/Raizo400Z)
 - [Santiago Suárez](https://github.com/SDarXx)
-
+  
 ---

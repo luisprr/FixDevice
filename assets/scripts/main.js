@@ -1,22 +1,12 @@
-// ========================================
-// FIX DEVICE - JavaScript
-// ========================================
-
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ----------------------------------------
-    // Elements
-    // ----------------------------------------
     const hamburger = document.querySelector('.hamburger');
     const navbar = document.querySelector('.navbar');
     const navOverlay = document.querySelector('.nav-overlay');
     const body = document.body;
     
     let isMenuOpen = false;
-    
-    // ----------------------------------------
-    // Menu Functions
-    // ----------------------------------------
+
     function openMenu() {
         isMenuOpen = true;
         hamburger.classList.add('active');
@@ -33,9 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
         body.classList.remove('nav-open');
     }
     
-    // ----------------------------------------
-    // Scroll Functions
-    // ----------------------------------------
     function scrollToTop() {
         window.scrollTo({
             top: 0,
@@ -53,10 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-    
-    // ----------------------------------------
-    // Hamburger Click
-    // ----------------------------------------
+
     hamburger.addEventListener('click', function(e) {
         e.stopPropagation();
         if (isMenuOpen) {
@@ -65,19 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
             openMenu();
         }
     });
-    
-    // ----------------------------------------
-    // Overlay Click - Close menu
-    // ----------------------------------------
+
     navOverlay.addEventListener('click', function() {
         closeMenu();
     });
     
-    // ----------------------------------------
-    // Navbar Click - Event Delegation
-    // ----------------------------------------
     navbar.addEventListener('click', function(e) {
-        // Check if clicked element is a link
         const link = e.target.closest('a');
         
         if (link) {
@@ -86,36 +63,26 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const linkId = link.id;
             
-            // Close menu
             closeMenu();
             
-            // Wait for menu to close, then scroll
             setTimeout(function() {
                 if (linkId === 'inicio') {
                     scrollToTop();
                 } else if (linkId === 'contactos') {
                     scrollToContact();
                 } else if (linkId === 'login') {
-                    // TODO: Implementar login
-                    // window.location.href = "login.html";
                     console.log("Login - pendiente de implementar");
                 }
             }, 350);
         }
     });
     
-    // ----------------------------------------
-    // Keyboard - Close on Escape
-    // ----------------------------------------
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && isMenuOpen) {
             closeMenu();
         }
     });
     
-    // ----------------------------------------
-    // Resize - Close menu on desktop
-    // ----------------------------------------
     window.addEventListener('resize', function() {
         if (window.innerWidth >= 768 && isMenuOpen) {
             closeMenu();

@@ -1,0 +1,1401 @@
+/* ========================================
+   FIX DEVICE - CSS REFACTORIZADO
+   Sistema Mobile-First con breakpoints consistentes
+   ======================================== */
+
+/* ----------------------------------------
+   VARIABLES Y RESET
+   ---------------------------------------- */
+:root {
+    --color-primary: #EA0C19;
+    --color-primary-hover: #ff0011;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gray-bg: hsl(0, 0%, 85%);
+    --color-gray-light: #D9D9D9;
+    
+    --shadow-card: 5px 30px 50px -20px rgba(251, 1, 1, 0.1);
+    
+    /* Contenedores fluidos */
+    --container-padding: clamp(1rem, 5vw, 3rem);
+    --section-spacing: clamp(2rem, 8vw, 5rem);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-color: var(--color-gray-bg);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ----------------------------------------
+   HEADER / NAVBAR
+   ---------------------------------------- */
+.head {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    background-color: var(--color-black);
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: bold;
+    color: var(--color-white);
+    text-transform: uppercase;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 1rem var(--container-padding);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Fix-Device {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.Fix-Device img {
+    height: 50px;
+    width: 50px;
+}
+
+.Fix-Device p {
+    line-height: 1;
+    text-align: start;
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1003;
+    position: relative;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -8px);
+}
+
+/* Overlay - DESHABILITADO */
+.nav-overlay {
+    display: none;
+}
+
+/* Mobile Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+    z-index: 1002;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.navbar.active {
+    right: 0;
+}
+
+.navbar a {
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 80%;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+}
+
+.navbar a:hover {
+    background-color: var(--color-primary);
+}
+
+/* Body lock when menu is open */
+body.nav-open {
+    overflow: hidden;
+}
+
+/* ----------------------------------------
+   HERO SECTION
+   ---------------------------------------- */
+.Header {
+    padding: clamp(3rem, 10vw, 9rem) var(--container-padding);
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: 'Saira Condensed', sans-serif;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    min-height: 50vh;
+}
+
+.title h1 {
+    margin: 0;
+    line-height: 0.9;
+    font-size: clamp(2.5rem, 8vw, 7.5rem);
+    text-align: start;
+}
+
+.title h1 span {
+    padding-left: 20px;
+    color: var(--color-primary);
+}
+
+.logofixdevice img {
+    width: clamp(120px, 20vw, 200px);
+    height: clamp(120px, 20vw, 200px);
+}
+
+/* ----------------------------------------
+   CATEGORÍAS (Computadoras, Celulares, Laptops)
+   ---------------------------------------- */
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 auto;
+    align-items: center;
+    background-color: var(--color-white);
+}
+
+.aparato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    width: 100%;
+    color: var(--color-primary);
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
+    background-color: var(--color-white);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.aparato img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+/* ----------------------------------------
+   MAIN SECTION - Revolucionando...
+   ---------------------------------------- */
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: var(--section-spacing) var(--container-padding);
+    background-color: var(--color-gray-light);
+}
+
+.persona img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+}
+
+.container_main {
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.container_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.cuadritorojo {
+    background-color: var(--color-primary);
+    padding: 50px 6px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.container_title .title {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: clamp(1.75rem, 5vw, 4.375rem);
+    text-transform: uppercase;
+    line-height: 1;
+    text-align: left;
+}
+
+.main p {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.875rem, 2vw, 1.7rem);
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* ----------------------------------------
+   ABOUT SECTION - Quienes Somos
+   ---------------------------------------- */
+.About {
+    background-color: var(--color-white);
+    margin: 0 var(--container-padding);
+    display: flex;
+    flex-direction: column;
+}
+
+.Who {
+    padding: clamp(2rem, 5vw, 9rem) clamp(1.5rem, 4vw, 3rem);
+    box-shadow: var(--shadow-card);
+}
+
+.About h3 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.125rem);
+    display: flex;
+    justify-content: left;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.About p {
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.Fix-Device_fun {
+    display: flex;
+    justify-content: left;
+    margin-top: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.Fix-Device_fun span {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.img_about img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ----------------------------------------
+   SERVICES SECTION - Nuestros Servicios
+   ---------------------------------------- */
+.Services {
+    padding: var(--section-spacing) var(--container-padding);
+}
+
+.Services h2 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    text-transform: uppercase;
+}
+
+.Services h2 span {
+    color: var(--color-primary);
+}
+
+/* Línea decorativa debajo del título */
+.Services .service-underline {
+    width: 80px;
+    height: 3px;
+    background-color: #999;
+    margin: 0.75rem auto 1rem;
+}
+
+.ourservice {
+    margin-bottom: 2rem;
+}
+
+.ourservice p {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.875rem);
+}
+
+.Services_comp_cel_lap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.single_service {
+    background-color: var(--color-white);
+    padding: clamp(2rem, 5vw, 5rem) clamp(1.5rem, 3vw, 2rem);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-card);
+}
+
+.single_service img {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 2rem;
+    align-self: center;
+}
+
+.single_service h4 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.single_service span {
+    color: var(--color-primary);
+}
+
+.single_service p {
+    margin-top: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    line-height: 1.5;
+}
+
+.btn_SaberMas {
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-top: auto;
+    color: var(--color-black);
+    transition: color 0.3s ease;
+}
+
+.btn_SaberMas:hover {
+    color: var(--color-primary);
+}
+
+/* ----------------------------------------
+   FLEXIBLE HOURS SECTION
+   ---------------------------------------- */
+.Flexible-hours {
+    background-color: var(--color-white);
+    padding: clamp(2rem, 5vw, 3rem) var(--container-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.Horarios-Flexibles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.Horarios-Flexibles h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.875rem, 2.5vw, 1.5rem);
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.H-F {
+    margin-bottom: 1rem;
+}
+
+.H-F h2 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: clamp(2rem, 6vw, 4.375rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.Horarios-Flexibles a {
+    display: inline-block;
+    background-color: var(--color-primary);
+    padding: 0.5rem clamp(1.5rem, 3vw, 2rem);
+    color: var(--color-white);
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.Horarios-Flexibles a:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.img-horarios {
+    display: flex;
+    justify-content: center;
+}
+
+.img-horarios img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+/* ----------------------------------------
+   CHOOSE YOUR PLAN SECTION
+   ---------------------------------------- */
+.Choose-your-plan {
+    display: flex;
+    flex-direction: column;
+    padding: var(--section-spacing) var(--container-padding);
+    background-color: var(--color-gray-bg);
+}
+
+.Choose-your-plan h2 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.7rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.Choose-your-plan h2 span {
+    color: var(--color-primary);
+}
+
+/* Línea decorativa debajo del título */
+.Choose-your-plan .plan-underline {
+    width: 80px;
+    height: 3px;
+    background-color: #999;
+    margin: 0 auto 1.5rem;
+}
+
+.Choose-your-plan #parrafo {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    margin: 0 auto 0.5rem;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+.Choose-your-plan .parrafo-tarifas {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    margin: 0 auto 2.5rem;
+}
+
+.container-basic-premium-buy {
+    background-color: var(--color-white);
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3.5rem) clamp(2rem, 5vw, 4rem);
+    box-shadow: 0 5px 40px rgba(234, 12, 25, 0.15);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* MOBILE: Reorganizar con CSS Grid y order */
+.basic-premium {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.plan-item {
+    margin-bottom: 1.5rem;
+}
+
+.plan-item:last-child {
+    margin-bottom: 0;
+}
+
+/* En móvil: Basic primero, Premium segundo */
+.plan-item:first-child {
+    order: 1;
+}
+
+.plan-item:last-child {
+    order: 3;
+}
+
+.plan-item h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.plan-item p {
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
+    font-family: 'Poppins', sans-serif;
+    padding-left: 1rem;
+    color: #333;
+}
+
+/* Buy Now section - reorganizado para móvil */
+.Buy-Now {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.Buy-Now h4.free {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    line-height: 1.3;
+    order: 2;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.Buy-Now .costo {
+    font-weight: bold;
+    order: 4;
+    margin-top: 0;
+}
+
+.Buy-Now .price {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    margin-bottom: 0.75rem;
+}
+
+.Buy-Now a {
+    display: inline-block;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-family: 'Saira Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.5rem clamp(1.5rem, 4vw, 2.5rem);
+    transition: background-color 0.3s ease;
+}
+
+.Buy-Now a:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* MOBILE LAYOUT: Intercalar elementos */
+@media (max-width: 767px) {
+    .container-basic-premium-buy {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    /* Ocultar contenedor basic-premium y Buy-Now, mostrar elementos individuales */
+    .basic-premium,
+    .Buy-Now {
+        display: contents;
+    }
+    
+    /* Plan Basic - orden 1 */
+    .plan-item:first-child {
+        order: 1;
+        margin-bottom: 1rem;
+    }
+    
+    /* Free label - orden 2 */
+    .Buy-Now h4.free {
+        order: 2;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Plan Premium - orden 3 */
+    .plan-item:last-child {
+        order: 3;
+        margin-bottom: 1rem;
+    }
+    
+    /* Costo y botón - orden 4 */
+    .Buy-Now .costo {
+        order: 4;
+        margin-top: 0.5rem;
+    }
+}
+
+/* ----------------------------------------
+   HAPPY CUSTOMERS SECTION
+   ---------------------------------------- */
+.HappyCustomers {
+    padding: var(--section-spacing) var(--container-padding);
+}
+
+.HappyCustomers h2 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.HappyCustomers h2 span {
+    color: var(--color-primary);
+}
+
+/* Línea decorativa debajo del título */
+.title-underline {
+    width: 80px;
+    height: 3px;
+    background-color: #999;
+    margin: 0.75rem auto 2rem;
+}
+
+.comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.comment-box,
+.comment-box-Javier {
+    width: 100%;
+    max-width: 500px;
+}
+
+.comment-box h5,
+.comment-box-Javier h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+
+/* Estrellas de rating */
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.stars svg {
+    width: 20px;
+    height: 20px;
+    fill: #FFD700;
+}
+
+.comment-box-img {
+    background-color: var(--color-white);
+    font-family: 'Poppins', sans-serif;
+    padding: 1.25rem 1.5rem;
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+    text-align: center;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    position: relative;
+}
+
+/* Triángulo apuntando hacia arriba */
+.comment-box-img::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--color-white);
+}
+
+/* ----------------------------------------
+   LAST SECTION - Contact Form
+   ---------------------------------------- */
+.LastSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--section-spacing) var(--container-padding);
+    gap: 2rem;
+}
+
+.Ready {
+    text-align: center;
+}
+
+.Ready h2 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: clamp(1.75rem, 4vw, 4rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.Ready h2 span {
+    color: var(--color-primary);
+}
+
+.Ready p {
+    margin-top: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.8rem);
+}
+
+.formulario {
+    background-color: var(--color-white);
+    padding: clamp(1.5rem, 4vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-card);
+    width: 100%;
+    max-width: 700px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.controls {
+    border: 2px solid var(--color-primary);
+    border-radius: 0.5rem;
+    padding: clamp(0.5rem, 2vw, 1rem);
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    width: 100%;
+}
+
+.controls:focus {
+    border-color: var(--color-primary-hover);
+}
+
+textarea.controls {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.formulario > a {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
+    font-family: 'Saira Condensed', sans-serif;
+    padding: 0.25rem 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.formulario > a:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* ----------------------------------------
+   FOOTER
+   ---------------------------------------- */
+.footer {
+    background-color: #111;
+    color: var(--color-white);
+    padding: clamp(3rem, 6vw, 4rem) clamp(2rem, 8vw, 8rem);
+    font-family: 'Poppins', sans-serif;
+}
+
+.upfooter {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+}
+
+.seccionfooter {
+    text-align: center;
+}
+
+/* Sección Social - Síguenos */
+.seccionfooter-social h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    font-style: normal;
+}
+
+.seccionfooter-social h3 span {
+    font-weight: 700;
+}
+
+/* Sección Suscribirse */
+.seccionfooter-subscribe h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-style: normal;
+}
+
+/* Sección Ubicación */
+.seccionfooter-ubicacion h3 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+    font-style: normal;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.seccionfooter p {
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.fb_ig {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
+.fb_ig svg {
+    width: 32px;
+    height: 32px;
+    transition: opacity 0.3s ease;
+}
+
+.fb_ig svg:hover {
+    opacity: 0.7;
+}
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.contacto-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.contacto-item p {
+    color: var(--color-white);
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+}
+
+.contacto-item svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.email_sucribete {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-bottom: 0.75rem;
+}
+
+#email {
+    font-family: 'Poppins', sans-serif;
+    width: clamp(160px, 35vw, 220px);
+    padding: 0.6rem 1rem;
+    border: none;
+    outline: none;
+    font-size: 0.85rem;
+}
+
+.email_sucribete a {
+    background-color: var(--color-primary);
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--color-white);
+    padding: 0.6rem 1.25rem;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.email_sucribete a:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.downfotter {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.downfotter > p {
+    font-size: clamp(0.7rem, 1.3vw, 0.8rem);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.help_terms_privacy {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.help_terms_privacy p {
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    color: var(--color-white);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.help_terms_privacy p:hover {
+    opacity: 0.7;
+}
+
+/* ========================================
+   BREAKPOINT: TABLET (min-width: 768px)
+   ======================================== */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+    
+    .nav-overlay {
+        display: none;
+    }
+    
+    .navbar {
+        position: static;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        gap: 1rem;
+        box-shadow: none;
+        background-color: transparent;
+        z-index: auto;
+    }
+    
+    .navbar a {
+        width: auto;
+        padding: 0.5rem 1rem;
+        font-size: inherit;
+        z-index: auto;
+    }
+    
+    .Header {
+        flex-direction: row;
+        justify-content: space-evenly;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        padding-bottom: clamp(8rem, 18vw, 14rem);
+    }
+    
+    .contenedor {
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+        margin-top: -80px;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        box-shadow: 0 10px 40px rgba(234, 12, 25, 0.2);
+        z-index: 10;
+    }
+    
+    .aparato {
+        width: auto;
+        min-width: 200px;
+        flex: 1;
+        max-width: 350px;
+        padding: 3rem 3rem;
+    }
+    
+    .main {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .persona {
+        flex: 1;
+    }
+    
+    .persona img {
+        height: 400px;
+        object-fit: cover;
+    }
+    
+    .container_main {
+        flex: 1;
+    }
+    
+    .About {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 clamp(2rem, 8vw, 7.5rem);
+    }
+    
+    .Services_comp_cel_lap {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    .single_service {
+        flex: 1;
+        min-width: 280px;
+        max-width: 450px;
+    }
+    
+    .single_service img {
+        height: 150px;
+        width: 150px;
+    }
+    
+    .Flexible-hours {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 clamp(3rem, 8vw, 8rem);
+        padding-left: clamp(3rem, 8vw, 8rem);
+        position: relative;
+        margin-top: 100px;
+    }
+    
+    .Horarios-Flexibles {
+        align-items: flex-start;
+        text-align: left;
+        padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+    
+    .img-horarios {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        align-self: flex-end;
+    }
+    
+    .img-horarios img {
+        max-width: 100%;
+        width: clamp(400px, 45vw, 650px);
+        height: auto;
+        display: block;
+        margin-top: -100px;
+        margin-bottom: 0;
+    }
+    
+    /* TABLET/DESKTOP: Layout horizontal para planes */
+    .container-basic-premium-buy {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+    
+    .basic-premium {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        flex: 1;
+    }
+    
+    /* Restaurar orden normal en desktop */
+    .plan-item:first-child {
+        order: unset;
+    }
+    
+    .plan-item:last-child {
+        order: unset;
+        margin-bottom: 0;
+    }
+    
+    .Buy-Now {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        text-align: center;
+    }
+    
+    .Buy-Now h4.free {
+        order: unset;
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+    
+    .Buy-Now .costo {
+        order: unset;
+        margin-top: 60px;
+    }
+    
+    .comentarios {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    .comment-box,
+    .comment-box-Javier {
+        flex: 1;
+        min-width: 280px;
+    }
+    
+    .comment-box h5,
+    .comment-box-Javier h5 {
+        text-align: left;
+    }
+    
+    .stars {
+        justify-content: flex-start;
+    }
+    
+    .comment-box-img {
+        text-align: left;
+        justify-content: flex-start;
+    }
+    
+    .comment-box-img::before {
+        left: 30px;
+        transform: none;
+    }
+    
+    .LastSection {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .Ready {
+        text-align: left;
+        flex: 1;
+        max-width: 500px;
+    }
+    
+    .formulario {
+        flex: 1;
+    }
+    
+    .form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    
+    .form textarea.controls {
+        grid-column: 1 / -1;
+    }
+    
+    .upfooter {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 4rem;
+        align-items: start;
+    }
+    
+    .seccionfooter {
+        text-align: left;
+    }
+    
+    .seccionfooter p {
+        text-align: left;
+    }
+    
+    .seccionfooter-social {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .seccionfooter-subscribe {
+        text-align: center;
+    }
+    
+    .seccionfooter-subscribe h3 {
+        text-align: center;
+    }
+    
+    .seccionfooter-subscribe p {
+        text-align: center;
+    }
+    
+    .seccionfooter-ubicacion {
+        text-align: left;
+    }
+    
+    .fb_ig {
+        justify-content: flex-start;
+    }
+    
+    .redes {
+        align-items: flex-start;
+    }
+    
+    .email_sucribete {
+        justify-content: center;
+    }
+    
+    .downfotter {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .help_terms_privacy {
+        gap: 3rem;
+    }
+}
+
+/* ========================================
+   BREAKPOINT: DESKTOP (min-width: 1024px)
+   ======================================== */
+@media (min-width: 1024px) {
+    .aparato {
+        padding: 3.5rem 4rem;
+    }
+    
+    .contenedor {
+        margin-top: -100px;
+    }
+    
+    .main {
+        padding: var(--section-spacing) clamp(3rem, 10vw, 8rem);
+    }
+    
+    .persona img {
+        height: 500px;
+    }
+    
+    .cuadritorojo {
+        padding: 80px 8px;
+        margin-right: 40px;
+    }
+    
+    .Services_comp_cel_lap {
+        flex-wrap: nowrap;
+        gap: 2rem;
+        padding: 0 clamp(2rem, 5vw, 5rem);
+    }
+    
+    .single_service {
+        max-width: 500px;
+    }
+    
+    .comentarios {
+        flex-wrap: nowrap;
+        padding: 0 clamp(2rem, 5vw, 5rem);
+    }
+    
+    .comment-box,
+    .comment-box-Javier {
+        max-width: 500px;
+    }
+    
+    .LastSection {
+        padding: var(--section-spacing) clamp(3rem, 10vw, 8rem);
+        gap: 3rem;
+    }
+}
+
+/* ========================================
+   BREAKPOINT: LARGE DESKTOP (min-width: 1280px)
+   ======================================== */
+@media (min-width: 1280px) {
+    .Header {
+        padding: 9rem var(--container-padding) 12rem;
+    }
+    
+    .main {
+        padding: 6rem 8rem;
+    }
+    
+    .About {
+        margin: 0 7.5rem;
+    }
+    
+    .Services_comp_cel_lap {
+        padding: 0 9rem;
+    }
+    
+    .Flexible-hours {
+        padding: 0 10rem;
+        padding-left: 10rem;
+        margin-top: 140px;
+    }
+    
+    .Horarios-Flexibles {
+        padding: 5rem 0;
+    }
+    
+    .img-horarios img {
+        width: 700px;
+        margin-top: -140px;
+    }
+}

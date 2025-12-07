@@ -97,10 +97,10 @@ index.html
 
 ## Autores
 
-- Santiago Cárdenas
-- Daniela Gómez
-- Abigail Goñe
-- Luis Rodríguez
-- Santiago Suárez
+- [Santiago Cárdenas](https://github.com/Sack136-GIT)
+- [Daniela Gómez](https://github.com/DanieGF1)
+- [Abigail Goñe](https://github.com/abigoe02)
+- [Luis Rodríguez](https://github.com/luisprr)
+- [Santiago Suárez](https://github.com/SDarXx)
 
 ---

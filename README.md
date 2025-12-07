@@ -1,5 +1,5 @@
 ## Autores:
-- Santiago Cárdenas 🐚
+- Santiago Cárdenas 
 - Daniela Gómez
 - Abigail Goñe
 - Luis Rodríguez

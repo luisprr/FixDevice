@@ -194,7 +194,9 @@ function applyLanguage(language) {
   const t = translations[currentLanguage];
 
   document.documentElement.lang = currentLanguage;
-  document.querySelector("meta[name='description']")?.setAttribute("content", t.metaDescription);
+  if ($(".hero")) {
+    document.querySelector("meta[name='description']")?.setAttribute("content", t.metaDescription);
+  }
 
   $$(".main-nav a").forEach((link, index) => {
     link.innerHTML = t.nav[index];

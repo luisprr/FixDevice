@@ -1,4 +1,4 @@
-# FixDevice – Plataforma de Servicios Técnicos
+# FixDevice
 
 FixDevice es una página web diseñada para conectar a usuarios con técnicos especializados en la reparación de dispositivos electrónicos como computadoras, laptops y celulares. Este proyecto presenta una landing page moderna, responsiva y enfocada en la experiencia del usuario.
 

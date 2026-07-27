@@ -751,6 +751,7 @@ body.menu-open .nav-backdrop {
 .site-footer {
   background: var(--near-black);
   color: var(--white);
+  overflow: hidden;
   padding: 66px 0 58px;
 }
 
@@ -807,6 +808,9 @@ body.menu-open .nav-backdrop {
 }
 
 .footer__subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-self: center;
   width: min(100%, 620px);
   text-align: center;
@@ -843,7 +847,7 @@ body.menu-open .nav-backdrop {
 
 .footer__subscribe p {
   width: max-content;
-  max-width: 100%;
+  max-width: none;
   margin: 0 auto;
   color: rgba(255, 255, 255, 0.7);
   font-size: clamp(0.75rem, 1.5vw, 0.85rem);
@@ -1399,6 +1403,7 @@ body.menu-open .nav-backdrop {
     bottom: 48px;
     padding: 16px 10px;
     border-radius: 8px;
+    box-shadow: none;
   }
 
   .service-strip__item {
@@ -1425,7 +1430,7 @@ body.menu-open .nav-backdrop {
     max-height: 250px;
     aspect-ratio: 16 / 10;
     object-fit: cover;
-    box-shadow: var(--shadow);
+    box-shadow: none;
   }
 
   .accent-heading {
@@ -1455,6 +1460,7 @@ body.menu-open .nav-backdrop {
     width: min(100% - 32px, 560px);
     overflow: hidden;
     border-radius: 8px;
+    box-shadow: none;
   }
 
   .about__copy {
@@ -1508,6 +1514,7 @@ body.menu-open .nav-backdrop {
     min-height: 0;
     padding: 28px 20px;
     border-radius: 8px;
+    box-shadow: none;
   }
 
   .service-card img {
@@ -1593,6 +1600,7 @@ body.menu-open .nav-backdrop {
     padding: 0;
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: none;
   }
 
   .plan-card h3,
@@ -1682,7 +1690,7 @@ body.menu-open .nav-backdrop {
   }
 
   .footer__top {
-    width: min(100% - 20px, 420px);
+    width: min(100% - 32px, 420px);
     gap: 32px;
     padding-bottom: 28px;
     text-align: center;
@@ -1740,11 +1748,11 @@ body.menu-open .nav-backdrop {
   }
 
   .footer__subscribe p {
-    width: 100%;
-    max-width: 100%;
+    width: max-content;
+    max-width: none;
     margin: 0 auto;
     color: rgba(255, 255, 255, 0.7);
-    font-size: clamp(8px, 2.25vw, 12px);
+    font-size: clamp(7px, 1.95vw, 10px);
     line-height: 1.25;
     text-align: center;
     white-space: nowrap;

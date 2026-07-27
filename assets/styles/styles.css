@@ -757,7 +757,7 @@ body.menu-open .nav-backdrop {
 
 .footer__top {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: start;
   gap: 64px;
   width: min(100% - 256px, 1648px);
@@ -812,7 +812,7 @@ body.menu-open .nav-backdrop {
   flex-direction: column;
   align-items: center;
   justify-self: center;
-  width: min(100%, 620px);
+  width: min(100%, 760px);
   text-align: center;
 }
 
@@ -1021,12 +1021,13 @@ body.menu-open .nav-backdrop {
     gap: 34px;
     padding: 96px 28px 44px;
     background: var(--black);
-    box-shadow: -18px 0 48px rgba(0, 0, 0, 0.42);
+    box-shadow: none;
     transform: translateX(100%);
     transition: transform 220ms ease;
   }
 
   body.menu-open .header-actions {
+    box-shadow: -18px 0 48px rgba(0, 0, 0, 0.42);
     transform: translateX(0);
   }
 
@@ -1275,7 +1276,9 @@ body.menu-open .nav-backdrop {
     -ms-overflow-style: none;
   }
 
+  html::-webkit-scrollbar,
   body::-webkit-scrollbar {
+    display: none;
     width: 0;
     height: 0;
   }

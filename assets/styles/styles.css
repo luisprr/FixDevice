@@ -510,6 +510,7 @@ body.menu-open .nav-backdrop {
   position: relative;
   z-index: 2;
   max-width: 430px;
+  margin-left: 34px;
   padding: 48px 0;
 }
 
@@ -838,11 +839,12 @@ body.menu-open .nav-backdrop {
 }
 
 .footer__subscribe p {
-  max-width: 700px;
+  max-width: none;
   margin: 0 auto;
   color: rgba(255, 255, 255, 0.7);
   font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   line-height: 1.45;
+  white-space: nowrap;
 }
 
 .footer__contact {
@@ -1529,6 +1531,7 @@ body.menu-open .nav-backdrop {
 
   .schedule__copy {
     max-width: 245px;
+    margin-left: 12px;
     padding: 0;
   }
 
@@ -1664,7 +1667,7 @@ body.menu-open .nav-backdrop {
   }
 
   .footer__top {
-    width: min(100% - 36px, 420px);
+    width: min(100% - 20px, 420px);
     gap: 32px;
     padding-bottom: 28px;
     text-align: center;
@@ -1722,12 +1725,14 @@ body.menu-open .nav-backdrop {
   }
 
   .footer__subscribe p {
-    max-width: 330px;
+    width: calc(100vw - 16px);
+    max-width: none;
     margin: 0 auto;
     color: rgba(255, 255, 255, 0.7);
-    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
-    line-height: 1.45;
+    font-size: clamp(7.8px, 2.4vw, 12px);
+    line-height: 1.25;
     text-align: center;
+    white-space: nowrap;
   }
 
   .footer__contact ul {

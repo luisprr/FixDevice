@@ -15,12 +15,14 @@
 }
 
 html {
+  background: var(--gray);
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
 body {
   width: 100%;
+  max-width: 100vw;
   margin: 0;
   background: var(--gray);
   color: var(--black);
@@ -33,6 +35,12 @@ body {
 img,
 svg {
   display: block;
+}
+
+main,
+.site-footer {
+  max-width: 100vw;
+  overflow-x: clip;
 }
 
 a {
@@ -752,7 +760,7 @@ body.menu-open .nav-backdrop {
   background: var(--near-black);
   color: var(--white);
   overflow: hidden;
-  padding: 66px 0 58px;
+  padding: clamp(3rem, 6vw, 4rem) clamp(2rem, 8vw, 8rem);
 }
 
 .footer__top {
@@ -760,7 +768,7 @@ body.menu-open .nav-backdrop {
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: start;
   gap: 64px;
-  width: min(100% - 256px, 1648px);
+  width: 100%;
   padding-bottom: 112px;
 }
 
@@ -811,8 +819,8 @@ body.menu-open .nav-backdrop {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-self: center;
-  width: min(100%, 760px);
+  justify-self: stretch;
+  width: 100%;
   text-align: center;
 }
 
@@ -846,8 +854,8 @@ body.menu-open .nav-backdrop {
 }
 
 .footer__subscribe p {
-  width: max-content;
-  max-width: none;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   color: rgba(255, 255, 255, 0.7);
   font-size: clamp(0.75rem, 1.5vw, 0.85rem);
@@ -890,7 +898,7 @@ body.menu-open .nav-backdrop {
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  width: min(100% - 256px, 1648px);
+  width: 100%;
   padding-top: 26px;
   border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
@@ -1027,7 +1035,7 @@ body.menu-open .nav-backdrop {
   }
 
   body.menu-open .header-actions {
-    box-shadow: -18px 0 48px rgba(0, 0, 0, 0.42);
+    box-shadow: none;
     transform: translateX(0);
   }
 
@@ -1751,11 +1759,11 @@ body.menu-open .nav-backdrop {
   }
 
   .footer__subscribe p {
-    width: max-content;
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     color: rgba(255, 255, 255, 0.7);
-    font-size: clamp(7px, 1.95vw, 10px);
+    font-size: clamp(7.4px, 2vw, 10px);
     line-height: 1.25;
     text-align: center;
     white-space: nowrap;
@@ -1798,6 +1806,16 @@ body.menu-open .nav-backdrop {
 
   .footer__bottom a {
     font-size: 12px;
+  }
+
+  .service-strip,
+  .intro__image,
+  .about__card,
+  .service-card,
+  .plan-card,
+  .contact-form,
+  .header-actions {
+    box-shadow: none !important;
   }
 }
 

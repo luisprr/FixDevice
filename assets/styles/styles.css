@@ -16,15 +16,18 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
+  width: 100%;
   margin: 0;
   background: var(--gray);
   color: var(--black);
   font-family: var(--body);
   font-size: 15px;
   line-height: 1.55;
+  overflow-x: hidden;
 }
 
 img,
@@ -839,11 +842,13 @@ body.menu-open .nav-backdrop {
 }
 
 .footer__subscribe p {
-  max-width: none;
+  width: max-content;
+  max-width: 100%;
   margin: 0 auto;
   color: rgba(255, 255, 255, 0.7);
   font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   line-height: 1.45;
+  text-align: center;
   white-space: nowrap;
 }
 
@@ -1259,6 +1264,16 @@ body.menu-open .nav-backdrop {
 @media (max-width: 760px) {
   html {
     scroll-padding-top: 72px;
+    scrollbar-width: none;
+  }
+
+  body {
+    -ms-overflow-style: none;
+  }
+
+  body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
   }
 
   body {
@@ -1725,11 +1740,11 @@ body.menu-open .nav-backdrop {
   }
 
   .footer__subscribe p {
-    width: calc(100vw - 16px);
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     color: rgba(255, 255, 255, 0.7);
-    font-size: clamp(7.8px, 2.4vw, 12px);
+    font-size: clamp(8px, 2.25vw, 12px);
     line-height: 1.25;
     text-align: center;
     white-space: nowrap;
